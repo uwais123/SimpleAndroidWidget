@@ -32,8 +32,10 @@ class RandomNumbersWidget : AppWidgetProvider() {
 
 internal fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
 
-    val lastUpdate = "Random: " + NumberGenerator.generate(100)
+    val lastUpdate = "Random: " + NumberGenerator.generate(100) // generate random number maximum 100
     val widgetText = context.getString(R.string.appwidget_text)
+
+    // this value will call to be a text on appwidget_text
     val views = RemoteViews(context.packageName, R.layout.random_numbers_widget)
     views.setTextViewText(R.id.appwidget_text, lastUpdate)
 
